@@ -7,36 +7,25 @@
  int main()
    {
    char cargo[50];
-   float salary;
-   cout << "Qual o seu cargo ?" << endl;
+   float salaryN,salaryO,dif;
+   char answer[50];
+
+   cout << "Qual o seu cargo ? Digite apenas em minusculo" << endl;
    cin >> cargo;
    cout << "Qual seu salario? " << endl;
-   cin >> salary; 
-   int salaryO = salary;
+   cin >> salaryO; 
    
-   if (strcmp (cargo,"gerente") == 0){
-    cout << "Seu salario antigo: " << salary << endl;
-    salary += (salary*0.1);
-    int salaryN = salary;
-    cout << "Seu novo salário e: " << salary << endl;
-    float dif = salaryN - salaryO;
-    cout << "Diferenca: " << dif << endl;
-
+   if(strcmp(cargo,"gerente") == 0) {
+    salaryN = salaryO + (salaryO*0.1);
    } else if (strcmp(cargo,"engenheiro") == 0){
-    cout << "Seu salario antigo: " << salary << endl;
-    salary += (salary*0.2);
-    int salaryN = salary;
-    cout << "Seu novo salário e: " << salary << endl;
-    float dif = salaryN - salaryO;
-    cout << "Diferenca: " << dif << endl;
-   }else{
-    cout << "Seu salario antigo: " << salary << endl;
-    salary += (salary*0.4);
-    int salaryN = salary;
-    cout << "Seu novo salário e: " << salary << endl;
-    float dif = salaryN - salaryO;
-    cout << "Diferenca: " << dif << endl;
-    
+    salaryN = salaryO + (salaryO*0.2);
+   } else {
+    salaryN = salaryO + (salaryO*0.4);
    }
-
+   dif = salaryN - salaryO;
+   cout << "Seu salario antigo: " << salaryO << endl;
+   cout << "Seu salario atual: " << salaryN << endl;
+   cout << "Diferenca: " << dif; 
+   return 0;
+   
    }  
