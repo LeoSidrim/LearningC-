@@ -3,12 +3,11 @@
  #include <string.h>
 
  using namespace std;
- 
+ //codigo sem utilização de laços
  int main()
-   {
+    {
    char cargo[50];
    float salaryN,salaryO,dif;
-   char answer[50];
 
    cout << "Qual o seu cargo ? Digite apenas em minusculo" << endl;
    cin >> cargo;
@@ -27,5 +26,5 @@
    cout << "Seu salario atual: " << salaryN << endl;
    cout << "Diferenca: " << dif; 
    return 0;
-   
+
    }  
