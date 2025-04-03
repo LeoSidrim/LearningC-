@@ -1,37 +1,56 @@
-#include <stdio.h>
 #include <iostream>
+#include <stdio.h>
 #include <string.h>
 
 using namespace std;
-
-struct Funcionario{
-    string cargo;
-    float salaryO;
-    float salaryN;
-};
-
-
-int main(){
-    Funcionario fun[10];
-    float dif;
-    
-    for (int i=0; i<10, i++){
+ struct funcionario
+ {
+    float salaryO,salaryN,dif;
+    char cargo[50];
+ };
+ 
+//Usando laço DO-WHILE
+int main (){
+    char answer[1];
+    funcionario fun[10];
+    float custoAntes=0,custoDepois=0;
+    int cont =0;int gerente = 0;int engenheiro = 0,numGE;
+        for (int i=0;i<10;i++){
         cout << "Qual seu cargo? " << endl;
         cin >> fun[i].cargo;
         cout << "Qual seu salario? " << endl;
         cin >> fun[i].salaryO;
-
-        if (fun[i].cargo == "gerente"){
+        custoAntes += fun[i].salaryO;
+        if (strcmp(fun[i].cargo,"gerente") == 0){
             fun[i].salaryN = fun[i].salaryO+(fun[i].salaryO*0.1);
-        } else if (fun[i].cargo == "engenheiro"){
+            gerente++;
+        } else if (strcmp(fun[i].cargo,"engenheiro") == 0){
             fun[i].salaryN = fun[i].salaryO+(fun[i].salaryO*0.2);
+            engenheiro++;
         } else {
-            fun[i].salaryN =fun[i]. salaryO+(fun[i].salaryO*0.4);
+            fun[i].salaryN = fun[i].salaryO+(fun[i].salaryO*0.4);
         }
-        dif = fun[i].salaryN - fun[i].salaryO;
-        cout << "Seu salario antigo: " << fun[i].salaryO << endl;
-        cout << "Seu salario atual: " << fun[i].salaryN << endl;
-        cout << "Diferenca: " << dif << endl;
+        fun[i].dif = fun[i].salaryN - fun[i].salaryO;
+        custoDepois += fun[i].salaryN;
+        cout << "Deseja repetir (s/n)?" << endl;
+        cin >> answer;
+        if (strcmp(answer,"n") ==0){
+            break;
+        }
+        cont++;
+        }
+    for (int j=0;j<=cont;j++){
+        cout <<"Numero: "<< j<< endl << "Nome: " << fun[j].cargo << endl;
+        cout << "Seu salario antigo: " << fun[j].salaryO << endl;
+        cout << "Seu salario atual: " << fun[j].salaryN << endl;
+        cout << "Diferenca: " << fun[j].dif << endl; 
     }
+    numGE = engenheiro + gerente;
+    cout << "Numero de engenheiros e gerentes: " << numGE << endl;
+    cout <<"Custo antes do aumento: " << custoAntes << endl;
+    cout <<"Custo depois do aumento: " << custoDepois << endl;
+    
 
+        
+    return 0;
 }

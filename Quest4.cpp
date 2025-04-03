@@ -3,14 +3,14 @@
 #include <iostream>
 
 using namespace std;
-
+//Utilizando FOR para repetição (dados não são armazenados)
 int main(){
     int j;
     float salaryO, salaryN, dif;
     char cargo[50];
+
     cout << "Quantos funcionários serão cadastrados? " << endl;
     cin >> j;
-
     for (int i =0; i<j; i++){
         cout << "Qual seu cargo? " << endl;
         cin >> cargo;
