@@ -12,7 +12,11 @@ float aumentoGerente(float salaryO){
     float salaryN = salaryO+(salaryO*0.1);
     return salaryN;
 } 
-//Usando laço DO-WHILE
+float aumentoEngenheiro(float salaryO){
+    float salaryN = salaryO+(salaryO*0.2);
+    return salaryN;
+}
+
 int main (){
     char answer[1];
     funcionario fun[10];
@@ -28,7 +32,7 @@ int main (){
             fun[i].salaryN = aumentoGerente(fun[i].salaryO);
             gerente++;
         } else if (strcmp(fun[i].cargo,"engenheiro") == 0){
-            fun[i].salaryN = fun[i].salaryO+(fun[i].salaryO*0.2);
+            fun[i].salaryN = aumentoEngenheiro(fun[i].salaryO);
             engenheiro++;
         } else {
             fun[i].salaryN = fun[i].salaryO+(fun[i].salaryO*0.4);
@@ -52,8 +56,5 @@ int main (){
     cout << "Numero de engenheiros e gerentes: " << numGE << endl;
     cout <<"Custo antes do aumento: " << custoAntes << endl;
     cout <<"Custo depois do aumento: " << custoDepois << endl;
-    
-
-        
     return 0;
 }

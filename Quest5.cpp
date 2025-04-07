@@ -49,8 +49,5 @@ int main (){
     cout << "Numero de engenheiros e gerentes: " << numGE << endl;
     cout <<"Custo antes do aumento: " << custoAntes << endl;
     cout <<"Custo depois do aumento: " << custoDepois << endl;
-    
-
-        
     return 0;
 }
