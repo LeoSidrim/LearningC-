@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <string.h>
-
+//Struct and Functions
 using namespace std;
  struct funcionario
  {

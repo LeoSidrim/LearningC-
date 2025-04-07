@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <string.h>
-
+//Codigo utilizando Classes, Métodos e Objetos
 int gerente = 0;int engenheiro = 0;
 
 using namespace std;
@@ -11,7 +11,7 @@ using namespace std;
         string cargo;
         string name;
 
-    float aumento(){
+    void aumento(){
         float percentual =0;
         if (cargo == "gerente"){
             percentual = 0.1;
