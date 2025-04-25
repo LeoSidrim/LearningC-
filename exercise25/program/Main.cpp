@@ -5,13 +5,12 @@ using namespace std;
  
 int cont = 0; //contador para definir tamanho maximo do método exibirDados
 float custoTotalAntes = 0; //Custo total antes do aumento
-class Funcionario{
-  public:
-    int idade;
+class Funcionario{ // classe funcionario 
     private:
-    string nome;
+    string nome; // Atributos da classe usuário
     string cargo;
     double salario;
+    int idade;
        
   public:
     void set_LerDados() {
@@ -54,6 +53,6 @@ class Funcionario{
     a[i].exibirDados();
   }
   cout << "Custo total antes do aumento: "<< custoTotalAntes;
-  
+
 }
 

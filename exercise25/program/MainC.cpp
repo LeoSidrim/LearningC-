@@ -2,16 +2,17 @@
 #include <stdio.h>
 #include <string.h>
 //Codigo utilizando Classes, Métodos e Objetos
+int cont =0;
 int gerente = 0;int engenheiro = 0;
-
+float custoTotalAntes = 0, custoTotalDepois = 0;
 using namespace std;
  class funcionario{
-    public: 
+    private: 
         float salaryN, salaryO;
         string cargo;
         string name;
         
-
+    public:
     void aumento(){
         float percentual =0;
         if (cargo == "gerente"){
@@ -24,6 +25,7 @@ using namespace std;
             percentual = 0.4;
         }
         salaryN = salaryO + (salaryO*percentual);
+        custoTotalDepois += salaryN;
     }
 
     void lerdados(){
@@ -33,9 +35,10 @@ using namespace std;
         cin >> cargo;
         cout << "Seu salario atual: " << endl;
         cin >> salaryO;
+        custoTotalAntes += salaryO;
     }
 
-    void exibirDados() const {
+    void exibirDados() {
             cout << "Nome: " << name << endl;
             cout << "Cargo: " << cargo << endl;
             cout << "Seu salario antigo: " << salaryO << endl;
@@ -54,8 +57,6 @@ int main (){
         for (int i=0;i<10;i++){
         fun[i].lerdados();
         fun[i].aumento();
-        custoAntes += fun[i].salaryO;
-        custoDepois += fun[i].salaryN;
         cout << "Deseja repetir (s/n)?" << endl;
         cin >> answer;
         cin.ignore();
@@ -71,7 +72,7 @@ int main (){
         fun[i].exibirDados();
     }
     cout << "Numero de engenheiros e gerentes: " << numGE << endl;
-    cout <<"Custo antes do aumento: " << custoAntes << endl;
-    cout <<"Custo depois do aumento: " << custoDepois << endl;
+    cout <<"Custo antes do aumento: " << custoTotalAntes << endl;
+    cout <<"Custo depois do aumento: " << custoTotalDepois << endl;
     return 0;
 }
