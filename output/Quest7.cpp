@@ -10,6 +10,7 @@ using namespace std;
         float salaryN, salaryO;
         string cargo;
         string name;
+        
 
     void aumento(){
         float percentual =0;
