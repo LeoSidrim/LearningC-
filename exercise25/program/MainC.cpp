@@ -44,15 +44,15 @@ using namespace std;
             cout << "Seu salario antigo: " << salaryO << endl;
             cout << "Seu salario atual: " << salaryN << endl;
             cout << "Diferenca: " << salaryN - salaryO << endl; 
-        
+            cout << "---------------------------------"<< endl;
     }
+    
  };
 
 
 int main (){
     char answer[1];
     funcionario fun[10];
-    float custoAntes=0,custoDepois=0;
     int cont =0; int numGE;
         for (int i=0;i<10;i++){
         fun[i].lerdados();
@@ -74,5 +74,6 @@ int main (){
     cout << "Numero de engenheiros e gerentes: " << numGE << endl;
     cout <<"Custo antes do aumento: " << custoTotalAntes << endl;
     cout <<"Custo depois do aumento: " << custoTotalDepois << endl;
+    cout << "--------------------------------- " << endl;
     return 0;
 }
